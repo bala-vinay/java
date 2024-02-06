@@ -1,1 +1,6 @@
-
+create table account types(
+    acc_id int,
+    acc_name varchar(50),
+    primary key(acc_id)
+);
+create table bank_info(
