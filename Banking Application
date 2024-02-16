@@ -18,7 +18,7 @@ SELECT * FROM bank_info;
 SELECT * FROM user_info;
 SELECT * FROM bank_info;
 INSERT INTO bank_info(acc_nmbr,bank_name,ifsc_code,acc_type,curr_bal,user_id) 
-values("45673","State Bank Of India","SBI0HYD","SAVINGS",5464.97,132);
+values("58746","State Bank Of India","SBI0VZG","SAVINGS",1052.50,52);
 
 
 create table account_types(
@@ -27,23 +27,22 @@ create table account_types(
      primary key(account_type_id)
 );
 insert into account_types values(1,'SAVINGS ACCOUNT');
-insert into account_types values(2,'CURRENT ACCOUNT');
-insert into account_types values(3,'LOAN ACCOUNT');
+insert into account_types values(2,'LOAN ACCOUNT');
+insert into account_types values(3,'CURRENT ACCOUNT');
 insert into account_types values(4,'SALARY ACCOUNT');
-insert into account_types values(5,'BUSINESS ACCOUNT');
-
 
 CREATE TABLE user_info(
 user_id int PRIMARY KEY,
-user_name varchar(50) NOT NULL,
-user_pass varchar(20),
-user_full_name varchar(50),
+user_name varchar(80) NOT NULL,
+user_pass varchar(10),
+user_full_name varchar(20),
 user_mail varchar(30) UNIQUE,
-user_ph varchar(12) UNIQUE,
-user_address varchar(50)
+user_ph varchar(10) UNIQUE,
+user_address varchar(40)
 );
+
 INSERT INTO user_info values
-(101,"abcd","something","abcdefg","abcdef@gmail.com","9123456780","abcd_nagar/south_korea");
+(101,"XYZ","something","efghi","abcdef@gmail.com","9959685262","abcd_nagar/america");
 SELECT * FROM user_info;
 
 ALTER TABLE user_info
