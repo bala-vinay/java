@@ -5,11 +5,12 @@ create table account types(
 );
 create table bank_info(
 id int auto_increment primary key,
-acc_nmbr varchar(30) NOT NULL,
-bank_name VARCHAR(30) NOT NULL,
-ifsc_code VARCHAR(15) NOT NULL ,
-acc_type VARCHAR(20) NOT NULL,
-curr_bal DOUBLE NOT NULL,
+acc_nmbr varchar(80) NOT NULL,
+bank_name VARCHAR(80) NOT NULL,
+ifsc_code VARCHAR(20) NOT NULL ,
+acc_type VARCHAR(10) NOT NULL,
+curr_bal NOT NULL,
+
 user_id INT NOT NULL,
 FOREIGN KEY (user_id) REFERENCES user_info(user_id)
 );
