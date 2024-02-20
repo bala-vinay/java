@@ -18,7 +18,7 @@ SELECT * FROM bank_info;
 SELECT * FROM user_info;
 SELECT * FROM bank_info;
 INSERT INTO bank_info(acc_nmbr,bank_name,ifsc_code,acc_type,curr_bal,user_id) 
-values("58746","State Bank Of India","SBI0VZG","SAVINGS",1052.50,52);
+values("112233","State Bank Of India","SBI0VZG","SAVINGS",1052.50,52);
 
 
 create table account_types(
@@ -51,20 +51,20 @@ SELECT * FROM user_info;
 
 
 delete from user_info
-where user_id = 105;
+where user_id = 25;
 set sql_safe_updates=0;
 
 //for add money
 
 update bank_info
 set curr_bal=curr_bal+100
-where user_id=101;
+where user_id=45;
 
 create table transaction(trxn_id int auto_increment primary key,
 trxn_date timestamp default current_timestamp ,
-from_acc_no varchar(30) not null , 
-to_acc_no varchar(30) not null, 
-descr varchar(255) ,
+from_acc_no varchar(50) not null , 
+to_acc_no varchar(50) not null, 
+descr varchar(100) ,
 amount_send double not null,
 balance double not null,
 user_id int not null,
@@ -73,23 +73,20 @@ foreign key(from_acc_no) references bank_info(acc_nmbr),
 foreign key(to_acc_no) references bank_info(acc_nmbr));
 
 alter table bank_info
-modify acc_nmbr varchar(30) unique;
+modify acc_nmbr varchar(50) unique;
 desc transaction;
 
 insert into transaction(from_acc_no,to_acc_no,descr,amount_send,balance,
 user_id) values
-("1590","45673","Loan Payment",500.00,5050.58,107),
-("45673","54987","Rent",1000.00,4464.97,132);
+("3250","3271","Loan Payment",500.00,5050.58,107),
+("32571","65748","Rent",5000.00,2464.97,152);
 select * from transaction 
 where user_id=101 ORDER BY trxn_id
 ;
 use bank;
 update bank_info
-set curr_bal=curr_bal+1000
-where user_id=105;
+set curr_bal=curr_bal+5000
+where user_id=45;
 desc bank_info;
-update bank_info set curr_bal=curr_bal+500 where acc_nmbr=56847;
-update bank_info set curr_bal=500 where user_id=101;
-
-INSERT INTO bank_info(acc_nmbr,bank_name,ifsc_code,acc_type,curr_bal,user_id) 
-values("45876","kotak Bank","KOT00GNP","SAVINGS",45876.01,132);
+update bank_info set curr_bal=curr_bal+2500 where acc_nmbr=112233;
+update bank_info set curr_bal=2500 where user_id=45;
