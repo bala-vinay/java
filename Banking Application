@@ -55,7 +55,7 @@ set sql_safe_updates=0;
 //for add money
 
 update bank_info
-set curr_bal=curr_bal+100
+set curr_bal=curr_bal+200
 where user_id=45;
 
 create table transaction(trxn_id int auto_increment primary key,
