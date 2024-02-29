@@ -20,16 +20,15 @@ SELECT * FROM bank_info;
 INSERT INTO bank_info(acc_nmbr,bank_name,ifsc_code,acc_type,curr_bal,user_id) 
 values("112233","State Bank Of India","SBI0VZG","SAVINGS",1052.50,52);
 
-
 create table account_types(
 	account_type_id int,
     account_type_name varchar(20),
      primary key(account_type_id)
 );
 insert into account_types values(1,'SAVINGS ACCOUNT');
-insert into account_types values(2,'LOAN ACCOUNT');
 insert into account_types values(3,'CURRENT ACCOUNT');
 insert into account_types values(4,'SALARY ACCOUNT');
+insert into account_types values(2,'LOAN ACCOUNT');
 
 CREATE TABLE user_info(
 user_id int PRIMARY KEY,
@@ -42,13 +41,12 @@ user_address varchar(40)
 );
 
 INSERT INTO user_info values
-(101,"XYZ","something","efghi","abcdef@gmail.com","9959685262","abcd_nagar/america");
+(101,"XYZ","network","efghi","vinay@gmail.com","9959685262","abcd_nagar/america");
 SELECT * FROM user_info;
 
 ALTER TABLE user_info
 MODIFY user_id INT AUTO_INCREMENT;
 SELECT * FROM user_info;
-
 
 delete from user_info
 where user_id = 25;
